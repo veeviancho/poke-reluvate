@@ -1,0 +1,11 @@
+.link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  border-bottom: 3px solid rgba(0,0,0,0);
+  transition: 0.5s;
+}
+
+.link-active {
+  border-bottom: 3px solid #b00000;
+}
