@@ -10,6 +10,7 @@ const Collection = () => {
 
   const getCollection = async () => {
     const pokemon = await fetchData(`/pokemon?userId=${token}`)
+    console.log(pokemon)
     setCollection(pokemon)
   }
 
