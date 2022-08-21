@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Box, CssBaseline } from "@mui/material";
 
+import ProtectedRoute from "./pages/ProtectedRoute"
 import SharedLayout from "./pages/SharedLayout";
 import Catch from "./pages/Catch";
 import Collection from "./pages/Collection";
@@ -17,7 +18,7 @@ function App() {
     }}>
       <CssBaseline />
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
+        <Route path="/" element={<ProtectedRoute><SharedLayout /></ProtectedRoute>}>
           <Route index element={<Catch />} />
           <Route path="/collection" element={<Collection />} />
         </Route>

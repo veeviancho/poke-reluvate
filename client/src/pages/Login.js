@@ -1,39 +1,45 @@
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Container, CssBaseline, Box, Avatar, Typography, TextField, Button } from '@mui/material'
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 
-// import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import fetchData from "../utils/fetchData"
 
 const Login = () => {
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const [error, setError] = useState('')
+  const [error, setError] = useState('');
+  const [user, setUser] = useState({
+    username: '',
+    password: ''
+  })
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const form = new FormData(e.target);
-  //   const request = ({
-  //     username: form.get('username'),
-  //     password: form.get('password')
-  //   })
-  //   try {
-  //     const response = await api.post('/api/users/login', request);
-  //     const data = await response.data;
-  //     if (data) {
-  //       setError('')
-  //       localStorage.setItem('id', data.response.id);
-  //       navigate('/')
-  //     }
-  //   } catch (err) {
-  //     console.log(err)
-  //     setError(err.response.data.msg)
-  //   }
-  // }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser(prev => {
+      return {
+        ...prev,
+        [name]: value
+      }
+    })
+  }
 
-  const handleSubmit = () => {
-    console.log('submit')
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = await fetchData('/users');
+    const userExists = data.find(item => item.username === user.username);
+
+    if (userExists) {
+      if (userExists.password === user.password) {
+        localStorage.setItem('token', userExists.id);
+        navigate('/')
+      } else {
+        setError('Wrong password entered.')
+      }
+    } else {
+      setError('User does not exist.')
+    }
   }
 
   return (
@@ -52,7 +58,7 @@ const Login = () => {
         Login
       </Typography>
       <Typography component="p" variant="subtitle1" sx={{ color: 'error.main' }}>
-        {/* { error && error } */}
+        { error && error }
       </Typography>
       <Box component="form" sx={{ mt: 1 }} onSubmit={handleSubmit}>
         <TextField
@@ -64,6 +70,8 @@ const Login = () => {
           margin="normal"
           autoComplete="username"
           autoFocus
+          onChange={(e) => handleChange(e)}
+          value={user.username}
         />
         <TextField
           id="password"
@@ -74,6 +82,8 @@ const Login = () => {
           margin="normal"
           autoComplete="current-password"
           type="password"
+          onChange={(e) => handleChange(e)}
+          value={user.password}
         />
         <Button
           type="submit"

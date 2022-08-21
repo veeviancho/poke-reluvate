@@ -6,11 +6,12 @@ import fetchData from '../utils/fetchData'
 
 const Collection = () => {
   const [collection, setCollection] = useState([]);
+  const token = parseInt(localStorage.getItem('token'));
 
   useEffect(() => {
     const getCollection = async () => {
       const pokemon = await fetchData('/pokemon')
-      const data = pokemon.filter(item => item.userId === 1)
+      const data = pokemon.filter(item => item.userId === token)
       setCollection(data)
     }
     getCollection();

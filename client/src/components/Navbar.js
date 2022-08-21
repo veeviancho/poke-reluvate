@@ -1,11 +1,21 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 import { Stack, IconButton, Typography } from '@mui/material';
 import PokemonIcon from '@mui/icons-material/CatchingPokemon';
 import LogoutIcon from '@mui/icons-material/PowerSettingsNew';
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    const confirm = window.confirm('Confirm logout?');
+    if (confirm) {
+      localStorage.removeItem('token');
+      navigate('/login')
+    }
+  }
   return (
     <Stack 
       direction="row" 
@@ -33,7 +43,7 @@ const Navbar = () => {
         <NavLink to="/collection" className={({ isActive }) => isActive ? 'link link-active' : 'link'}>
           <Typography>My Collection</Typography>
         </NavLink>
-        <IconButton><LogoutIcon sx={{ color: 'white' }} /></IconButton>
+        <IconButton onClick={handleLogout}><LogoutIcon sx={{ color: 'white' }} /></IconButton>
       </Stack>
     </Stack>
   )
