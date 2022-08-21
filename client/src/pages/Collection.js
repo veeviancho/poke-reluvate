@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 import Card from '../components/Card'
 import fetchData from '../utils/fetchData'
@@ -16,6 +16,14 @@ const Collection = () => {
   useEffect(() => {
     getCollection();
   }, [])
+
+  if (collection.length === 0) {
+    return (
+      <Typography sx={{ textAlign: 'center', mt: 5 }}>
+        No item in collection yet.
+      </Typography>
+    )
+  }
 
   return (
     <div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
 
-import { Stack, IconButton, Typography } from '@mui/material';
+import { Stack, IconButton, Typography, Box } from '@mui/material';
 import PokemonIcon from '@mui/icons-material/CatchingPokemon';
 import LogoutIcon from '@mui/icons-material/PowerSettingsNew';
 
@@ -20,18 +20,26 @@ const Navbar = () => {
   return (
     <Stack 
       direction="row" 
-      justifyContent="space-between" 
       alignItems='center' 
-      py={3}
-      px={5}
-      sx={{ backgroundColor: '#181821', position: 'fixed', width: '100vw', textTransform: 'uppercase' }}
+      sx={{ 
+        px: { sm: 5, xs: 1 },
+        py: 3, 
+        backgroundColor: '#181821', 
+        position: 'fixed', 
+        width: '100vw', 
+        textTransform: 'uppercase',
+        justifyContent: { xs: 'center', md: 'space-between' },
+        textAlign: 'center'
+      }}
     >
+      <Box sx={{ display: { xs: 'none', md: 'flex' }}}>
       <NavLink to="/" className='link'>
         <Stack direction="row" alignItems="center" spacing={2}>
           <PokemonIcon fontSize="large" sx={{ color: 'white' }} />
           <Typography>Gotta Catch 'Em All</Typography>
         </Stack>
       </NavLink>
+      </Box>
       <Stack 
         direction="row" 
         alignItems='center' 
