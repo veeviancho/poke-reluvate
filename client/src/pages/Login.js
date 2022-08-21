@@ -27,17 +27,16 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = await fetchData('/users');
-    const userExists = data.find(item => item.username === user.username);
-
-    if (userExists) {
-      if (userExists.password === user.password) {
+    const userExists = await fetchData(`/users?username=${user.username}`);
+    try {
+      if (userExists[0].password === user.password) {
         localStorage.setItem('token', userExists.id);
         navigate('/')
       } else {
         setError('Wrong password entered.')
       }
-    } else {
+    } catch (err) {
+      console.log(err)
       setError('User does not exist.')
     }
   }
