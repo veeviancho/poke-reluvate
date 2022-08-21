@@ -6,7 +6,6 @@ const setCapture = async () => {
   const randomNo = Math.floor(Math.random() * pokemon.length);
   const item = pokemon[randomNo];
   const storage = { id: item.id, name: item.name };
-  console.log(storage)
   localStorage.setItem('capture', JSON.stringify(storage));
 }
 

@@ -17,7 +17,7 @@ const Catch = () => {
     const res = await fetchData(`/pokemon/${capture.id}`)
     const update = await updateData(`/pokemon/${res.id}`, {...res, userId: token, level: level})
     if (update) {
-      console.log('added: ', {...res, userId: token, level: level })
+      console.log('added')
     }
   }
 

@@ -22,12 +22,17 @@ const Register = () => {
     e.preventDefault();
     const { username, password, password2 } = user;
     if (password === password2) {
-      setError('')
+      setError('');
       const details = { username, password }
       const data = postData("/users", details);
       if (data) setSuccess(<Typography component="p" variant="subtitle1" sx={{ color: 'success.main' }}>
         Successfully registered. Proceed to <Link to="/login">login</Link>.
       </Typography>)
+      setUser({
+        username: '',
+        password: '',
+        password2: ''
+      })
     } else {
       setError('Passwords do not match.')
     }

@@ -6,10 +6,7 @@
 - [Material-UI](https://mui.com/) - Material-UI is a library that allows developers to import and use different components to create a user interface in React applications.
 
 ### Server
-- [Django](https://www.djangoproject.com/) - Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
-
-### Database
-- 
+- [JSON Server](https://www.npmjs.com/package/json-server) - JSON Server is a simple project that helps you to setup a mock REST API with CRUD operations very fast.
 
 ### Others
 - [react-router-dom](https://reactrouter.com/) - React Router is a fully-featured client and server-side routing library for React. It enables the implementation of dynamic routing in a web app, allowing for the display of pages and allows users to navigate them.
@@ -17,3 +14,22 @@
 - [Babel](https://babeljs.io/) - Babel is a free and open-source JavaScript transcompiler that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript that can be run by older JavaScript engines.
 - [Webpack](https://webpack.js.org/) - Webpack is a free and open-source module bundler for JavaScript.
 - [ESLint](https://eslint.org/) - ESLint is a static code analysis tool for identifying problematic patterns found in JavaScript code.
+
+## Setup
+Install the dependencies and start the server.
+
+```sh
+cd server
+npm i
+npm start
+```
+
+Install the dependencies and start the client.
+
+```sh
+cd client
+npm i
+npm start
+```
+
+Access the client application on [localhost:3000](localhost:3000) and the server application on [localhost:3005](localhost:3005)

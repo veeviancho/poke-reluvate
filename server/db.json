@@ -4,16 +4,6 @@
       "id": 1,
       "username": "username",
       "password": "password"
-    },
-    {
-      "username": "username1",
-      "password": "password",
-      "id": 2
-    },
-    {
-      "username": "username2",
-      "password": "password",
-      "id": 3
     }
   ],
   "pokemon": [
@@ -54,7 +44,7 @@
       "attack": 45,
       "defense": 40,
       "type": "Normal",
-      "userId": "1",
+      "userId": null,
       "level": null
     },
     {
@@ -64,8 +54,8 @@
       "attack": 56,
       "defense": 35,
       "type": "Normal",
-      "userId": "1",
-      "level": 2
+      "userId": null,
+      "level": null
     },
     {
       "id": 6,
@@ -94,8 +84,8 @@
       "attack": 55,
       "defense": 25,
       "type": "Ground",
-      "userId": "1",
-      "level": 20
+      "userId": null,
+      "level": null
     },
     {
       "id": 9,
@@ -110,7 +100,12 @@
     {
       "id": 10,
       "name": "Tentacool",
-      "userId": "1"
+      "hp": 40,
+      "attack": 40,
+      "defense": 35,
+      "type": "Water",
+      "userId": null,
+      "level": null
     },
     {
       "id": 11,
@@ -119,7 +114,7 @@
       "attack": 80,
       "defense": 100,
       "type": "Rock",
-      "userId": "1",
+      "userId": null,
       "level": null
     },
     {
@@ -129,7 +124,7 @@
       "attack": 65,
       "defense": 65,
       "type": "Water",
-      "userId": 1,
+      "userId": null,
       "level": null
     },
     {
@@ -149,8 +144,8 @@
       "attack": 120,
       "defense": 53,
       "type": "Fighting",
-      "userId": "1",
-      "level": 45
+      "userId": null,
+      "level": null
     },
     {
       "id": 15,
