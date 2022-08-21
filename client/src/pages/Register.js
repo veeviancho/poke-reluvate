@@ -1,38 +1,53 @@
 import { Container, CssBaseline, Box, Avatar, Typography, TextField, Button } from '@mui/material'
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 
-// import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import postData from '../utils/postData'
 
 const Register = () => {
 
-  // const navigate = useNavigate();
+  const [isError, setIsError] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
-  // const [error, setError] = useState('')
+  const [user, setUser] = useState({
+    username: '',
+    password: '',
+    password2: ''
+  });
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const form = new FormData(e.target);
-  //   const request = ({
-  //     username: form.get('username'),
-  //     password: form.get('password')
-  //   })
-  //   try {
-  //     const response = await api.post('/api/users/login', request);
-  //     const data = await response.data;
-  //     if (data) {
-  //       setError('')
-  //       localStorage.setItem('id', data.response.id);
-  //       navigate('/')
-  //     }
-  //   } catch (err) {
-  //     console.log(err)
-  //     setError(err.response.data.msg)
-  //   }
-  // }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { username, password, password2 } = user;
+    if (password === password2) {
+      setError('')
+      const details = { username, password }
+      const data = postData("/users", details);
+      if (data) setSuccess(<Typography component="p" variant="subtitle1" sx={{ color: 'success.main' }}>
+        Successfully registered. Proceed to <Link to="/login">login</Link>.
+      </Typography>)
+    } else {
+      setError('Passwords do not match.')
+    }
+  }
 
-  const handleSubmit = () => {
-    console.log('submit')
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser(prev => {
+      return {
+        ...prev,
+        [name]: value
+      }
+    })
+    if (name === 'password2') {
+      if (value !== user.password) {
+        setIsError(true)
+      } else {
+        setIsError(false)
+      }
+    }
   }
 
   return (
@@ -51,8 +66,9 @@ const Register = () => {
         Register
       </Typography>
       <Typography component="p" variant="subtitle1" sx={{ color: 'error.main' }}>
-        {/* { error && error } */}
+        { error && error }
       </Typography>
+      { success && success }
       <Box component="form" sx={{ mt: 1, width: '80%' }} onSubmit={handleSubmit}>
         <TextField
           id="username"
@@ -63,6 +79,8 @@ const Register = () => {
           margin="normal"
           autoComplete="username"
           autoFocus
+          value={user.username}
+          onChange={(e) => handleChange(e)}
         />
         <TextField
           id="password"
@@ -73,6 +91,8 @@ const Register = () => {
           margin="normal"
           autoComplete="current-password"
           type="password"
+          value={user.password}
+          onChange={(e) => handleChange(e)}
         />
         <TextField
           id="password2"
@@ -82,6 +102,9 @@ const Register = () => {
           fullWidth
           margin="normal"
           type="password"
+          value={user.password2}
+          onChange={(e) => handleChange(e)}
+          color={isError ? "error" : "primary" }
         />
         <Button
           type="submit"

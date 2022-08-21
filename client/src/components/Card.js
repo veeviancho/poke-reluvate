@@ -30,7 +30,7 @@ export default function BasicCard({ item, getCollection }) {
       <CardContent>
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Typography sx={{ fontSize: 14, color: 'grey' }} gutterBottom>
-            Level {level}
+            Level {level ? level : "Unknown"} 
           </Typography>
           <IconButton sx={{ color: 'white' }} onClick={handleDelete}><CloseRoundedIcon /></IconButton>
         </Stack>
@@ -39,7 +39,7 @@ export default function BasicCard({ item, getCollection }) {
           {name}
         </Typography>
         <Typography sx={{ fontSize: 14 }} gutterBottom>
-          {type}
+          {type ? type : "Unknown"}
         </Typography>
         
         <Typography variant="body2" pt={1}>HP</Typography> 

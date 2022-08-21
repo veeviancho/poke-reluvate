@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Stack, Typography, Box } from '@mui/material'
 
-import StartContent from '../components/StartContent'
+import StartContent from '../components/StartContent';
+import fetchData from '../utils/fetchData';
 
 const CompletedContent = ({ success, setComponent, handleClick, number }) => {
 
@@ -19,12 +20,18 @@ const CompletedContent = ({ success, setComponent, handleClick, number }) => {
   }, 1000)
 
   useEffect(() => {
-    const pageRefresh = () => {
-      setTimeout(() => {
-        setComponent(<StartContent handleClick={handleClick}/>)
-      }, 3000)
+    const getCapture = async () => {
+      const data = await fetchData('/pokemon');
+      if (data) {
+        const pokemon = data.filter(item => item.userId === null)
+        const len = pokemon.length;
+        const randomNo = Math.floor(Math.random() * len);
+        setTimeout(() => {
+          setComponent(<StartContent capture={pokemon[randomNo]} handleClick={handleClick}/>)
+        }, 3000)
+      }
     }
-    pageRefresh();
+    getCapture();
   }, [])
 
   return (

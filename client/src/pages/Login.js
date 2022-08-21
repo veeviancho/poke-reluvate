@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Container, CssBaseline, Box, Avatar, Typography, TextField, Button } from '@mui/material'
+import { Container, CssBaseline, Box, Avatar, Typography, TextField, Button} from '@mui/material'
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 
 import fetchData from "../utils/fetchData"
+import setCapture from '../utils/setCapture';
 
 const Login = () => {
 
@@ -14,6 +15,7 @@ const Login = () => {
     username: '',
     password: ''
   })
+  const [loading, setLoading] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,8 +34,12 @@ const Login = () => {
 
     if (userExists) {
       if (userExists.password === user.password) {
+        setLoading(true);
         localStorage.setItem('token', userExists.id);
-        navigate('/')
+        setCapture();
+        setTimeout(() => {
+          navigate('/');
+        }, 500);
       } else {
         setError('Wrong password entered.')
       }
@@ -91,7 +97,7 @@ const Login = () => {
           variant="contained"
           sx={{ mt: 2, mb: 1, py: 1 }}
         >
-          Login
+          {loading ? "Loading..." : "Login" }
         </Button>
         <Typography sx={{ textAlign: 'center' }}>No account yet? <Link to="/register">Register</Link> now.</Typography>
       </Box>

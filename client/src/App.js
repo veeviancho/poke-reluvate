@@ -5,6 +5,8 @@ import ProtectedRoute from "./pages/ProtectedRoute"
 import SharedLayout from "./pages/SharedLayout";
 import Catch from "./pages/Catch";
 import Collection from "./pages/Collection";
+
+import PublicRoutes from "./pages/PublicRoutes";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -22,8 +24,8 @@ function App() {
           <Route index element={<Catch />} />
           <Route path="/collection" element={<Collection />} />
         </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<PublicRoutes><Login /></PublicRoutes>} />
+        <Route path="/register" element={<PublicRoutes><Register /></PublicRoutes>} />
       </Routes>
     </Box>
   )

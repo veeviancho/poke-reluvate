@@ -5,7 +5,7 @@ const GuessContent = ({ handleComplete }) => {
 
   useEffect(() => {
     const generateRandomNo = () => {
-      const randomNo = Math.floor(Math.random(0,1) * 10) + 1;
+      const randomNo = Math.floor(Math.random(0,1) * 10) + 1; //random no from 1-10
       setNumber(randomNo);
     }
     generateRandomNo();
@@ -16,19 +16,18 @@ const GuessContent = ({ handleComplete }) => {
   const [value, setValue] = useState('');
   const [text, setText] = useState('');
 
-  console.log(number)
-
   const handleSubmit = () => {
-    if (value === '') {
+    const input = parseInt(value)
+    if (isNaN(input)) {
       setText(<Typography variant="body2">Please enter a number.</Typography>);
       return;
     }
     if (count === 1) {
-      if (value === number) handleComplete(true, number);
+      if (input === number) handleComplete(true, number);
       else handleComplete(false, number);
     } else {
-      if (value > number) setText(<Typography variant="body2">Your guess <b>{value}</b> is too high.</Typography>)
-      else if (value < number) setText(<Typography variant="body2">Your guess <b>{value}</b> is too low.</Typography>)
+      if (input > number) setText(<Typography variant="body2">Your guess <b>{input}</b> is too high.</Typography>)
+      else if (input < number) setText(<Typography variant="body2">Your guess <b>{input}</b> is too low.</Typography>)
       else handleComplete(true, number);
     }
     setCount(count - 1);
@@ -49,7 +48,7 @@ const GuessContent = ({ handleComplete }) => {
           type="number"
           inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
           sx={{ border: '1px solid white', borderRadius: '2px', input: { color: 'white' } }}
-          onChange={(e) => setValue(parseInt(e.target.value))}
+          onChange={(e) => setValue(e.target.value)}
           value={value}
         />
         <Box sx={{ textTransform: 'uppercase', mt: '20px' }}>

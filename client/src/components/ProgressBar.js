@@ -48,7 +48,7 @@ const ProgressBar = ({value, type}) => {
         }}/>
       </Box>
       <Box sx={{ minWidth: 20 }}>
-        <Typography variant="body2">{value}</Typography>
+        <Typography variant="body2">{value ? value : 0}</Typography>
       </Box>
     </Box>
   );

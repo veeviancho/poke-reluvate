@@ -1,7 +1,8 @@
-import * as React from 'react';
 import { Typography, Stack, Button, Box } from '@mui/material';
 
-const StartContent = ({handleClick}) => {
+const StartContent = ({ handleClick }) => {
+  const capture = JSON.parse(localStorage.getItem('capture'));
+
   return (
     <Stack direction="column" justifyContent="space-between" height="100%">
       <Typography variant="h6">
@@ -12,7 +13,7 @@ const StartContent = ({handleClick}) => {
           Available for capture
         </Typography>
         <Typography variant="h4">
-          Bulbasaur
+          {capture.name}
         </Typography>
       </Box>
       <Button 

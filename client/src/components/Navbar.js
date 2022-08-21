@@ -13,6 +13,7 @@ const Navbar = () => {
     const confirm = window.confirm('Confirm logout?');
     if (confirm) {
       localStorage.removeItem('token');
+      localStorage.removeItem('capture');
       navigate('/login')
     }
   }
