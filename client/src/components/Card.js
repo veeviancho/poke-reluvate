@@ -4,18 +4,8 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 import ProgressBar from './ProgressBar'
 
-export default function BasicCard() {
-  const item = {
-    "id": 1,
-    "name": "Bulbasaur",
-    "hp": 45,
-    "attack": 49,
-    "defense": 49,
-    "type": "Grass",
-    "userId": null,
-    "level": null
-  }
-
+export default function BasicCard({ item }) {
+  
   const { name, hp, attack, defense, type, level } = item;
 
   return (

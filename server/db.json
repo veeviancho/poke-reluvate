@@ -1,0 +1,171 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "username",
+      "password": "password"
+    }
+  ],
+  "pokemon": [
+    {
+      "id": 1,
+      "name": "Bulbasaur",
+      "hp": 45,
+      "attack": 49,
+      "defense": 49,
+      "type": "Grass",
+      "userId": 1,
+      "level": null
+    },
+    {
+      "id": 2,
+      "name": "Charmander",
+      "hp": 39,
+      "attack": 52,
+      "defense": 43,
+      "type": "Fire",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 3,
+      "name": "Squirtle",
+      "hp": 44,
+      "attack": 48,
+      "defense": 65,
+      "type": "Water",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 4,
+      "name": "Pidgey",
+      "hp": 40,
+      "attack": 45,
+      "defense": 40,
+      "type": "Normal",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 5,
+      "name": "Rattata",
+      "hp": 30,
+      "attack": 56,
+      "defense": 35,
+      "type": "Normal",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 6,
+      "name": "Pikachu",
+      "hp": 35,
+      "attack": 55,
+      "defense": 40,
+      "type": "Electric",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 7,
+      "name": "Jigglypuff",
+      "hp": 115,
+      "attack": 45,
+      "defense": 20,
+      "type": "Normal",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 8,
+      "name": "Diglett",
+      "hp": 10,
+      "attack": 55,
+      "defense": 25,
+      "type": "Ground",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 9,
+      "name": "Machop",
+      "hp": 70,
+      "attack": 80,
+      "defense": 50,
+      "type": "Fighting",
+      "userId": 1,
+      "level": null
+    },
+    {
+      "id": 10,
+      "name": "Tentacool",
+      "hp": 40,
+      "attack": 40,
+      "defense": 35,
+      "type": "Water",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 11,
+      "name": "Geodude",
+      "hp": 40,
+      "attack": 80,
+      "defense": 100,
+      "type": "Rock",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 12,
+      "name": "Slowpoke",
+      "hp": 90,
+      "attack": 65,
+      "defense": 65,
+      "type": "Water",
+      "userId": 1,
+      "level": null
+    },
+    {
+      "id": 13,
+      "name": "Magnemite",
+      "hp": 25,
+      "attack": 35,
+      "defense": 70,
+      "type": "Electric",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 14,
+      "name": "Hitmonlee",
+      "hp": 50,
+      "attack": 120,
+      "defense": 53,
+      "type": "Fighting",
+      "userId": null,
+      "level": null
+    },
+    {
+      "id": 15,
+      "name": "Chansey",
+      "hp": 250,
+      "attack": 5,
+      "defense": 5,
+      "type": "Normal",
+      "userId": 1,
+      "level": null
+    },
+    {
+      "id": 16,
+      "name": "Mr. Mime",
+      "hp": 40,
+      "attack": 45,
+      "defense": 65,
+      "type": "Psychic",
+      "userId": null,
+      "level": null
+    }
+  ]
+}

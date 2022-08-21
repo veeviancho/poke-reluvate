@@ -5,14 +5,25 @@ const ProgressBar = ({value, type}) => {
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
+
+    // Declare max values for pokemon
+    const max = {
+      hp: 250,
+      attack: 150,
+      defense: 100 
+    }
+
+    const finalValue = (value / max[type]) * 100;
+
     let count = 0;
+
     const timer = setInterval(() => {
       count++;
       if (count >= 20) { //10*20 = 200 (every iteration +10)
         clearInterval(timer)
       }
       setProgress((prevProgress) => {
-        return Math.min(prevProgress + 10, value)
+        return Math.min(prevProgress + 10, finalValue)
       });
     }, 100);
     return () => {
@@ -37,7 +48,7 @@ const ProgressBar = ({value, type}) => {
         }}/>
       </Box>
       <Box sx={{ minWidth: 20 }}>
-        <Typography variant="body2">{progress}</Typography>
+        <Typography variant="body2">{value}</Typography>
       </Box>
     </Box>
   );
