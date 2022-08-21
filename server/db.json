@@ -14,7 +14,7 @@
       "attack": 49,
       "defense": 49,
       "type": "Grass",
-      "userId": 1,
+      "userId": null,
       "level": null
     },
     {
@@ -94,7 +94,7 @@
       "attack": 80,
       "defense": 50,
       "type": "Fighting",
-      "userId": 1,
+      "userId": null,
       "level": null
     },
     {
@@ -154,7 +154,7 @@
       "attack": 5,
       "defense": 5,
       "type": "Normal",
-      "userId": 1,
+      "userId": null,
       "level": null
     },
     {

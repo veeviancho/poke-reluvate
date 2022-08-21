@@ -1,12 +1,22 @@
-import * as React from 'react';
 import { Card, CardContent, IconButton, Typography, Stack } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
-import ProgressBar from './ProgressBar'
+import ProgressBar from './ProgressBar';
+import updateData from '../utils/updateData';
 
-export default function BasicCard({ item }) {
+export default function BasicCard({ item, getCollection }) {
   
-  const { name, hp, attack, defense, type, level } = item;
+  const { id, name, hp, attack, defense, type, level } = item;
+
+  const handleDelete = () => {
+    const confirm = window.confirm(`Remove ${name} from your collection?`)
+    if (confirm) {
+      const res = updateData(`/pokemon/${id}`, { ...item, userId: null });
+      if (res) {
+        getCollection();
+      }
+    }
+  }
 
   return (
     <Card sx={{ 
@@ -20,9 +30,9 @@ export default function BasicCard({ item }) {
       <CardContent>
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Typography sx={{ fontSize: 14, color: 'grey' }} gutterBottom>
-            Level 7
+            Level {level}
           </Typography>
-          <IconButton sx={{ color: 'white' }}><CloseRoundedIcon /></IconButton>
+          <IconButton sx={{ color: 'white' }} onClick={handleDelete}><CloseRoundedIcon /></IconButton>
         </Stack>
 
         <Typography variant="h5" component="div">

@@ -8,12 +8,12 @@ const Collection = () => {
   const [collection, setCollection] = useState([]);
   const token = parseInt(localStorage.getItem('token'));
 
+  const getCollection = async () => {
+    const pokemon = await fetchData(`/pokemon?userId=${token}`)
+    setCollection(pokemon)
+  }
+
   useEffect(() => {
-    const getCollection = async () => {
-      const pokemon = await fetchData('/pokemon')
-      const data = pokemon.filter(item => item.userId === token)
-      setCollection(data)
-    }
     getCollection();
   }, [])
 
@@ -23,7 +23,7 @@ const Collection = () => {
       {collection.map((item) => {
         return (
           <Grid key={item.id} item xs={1} sm={4} md={4} lg={3}>
-            <Card item={item}/>
+            <Card item={item} getCollection={getCollection}/>
           </Grid>
         )
       })}
