@@ -16,6 +16,7 @@
 - [ESLint](https://eslint.org/) - ESLint is a static code analysis tool for identifying problematic patterns found in JavaScript code.
 
 ## Setup
+npm v8.18.0 and node v16.15.1 were used during development.
 Install the dependencies and start the server.
 
 ```sh

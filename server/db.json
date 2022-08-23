@@ -14,8 +14,8 @@
       "attack": 49,
       "defense": 49,
       "type": "Grass",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 15
     },
     {
       "id": 2,
@@ -24,8 +24,8 @@
       "attack": 52,
       "defense": 43,
       "type": "Fire",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 3,
@@ -34,8 +34,8 @@
       "attack": 48,
       "defense": 65,
       "type": "Water",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 4,
@@ -44,8 +44,8 @@
       "attack": 45,
       "defense": 40,
       "type": "Normal",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 55
     },
     {
       "id": 5,
@@ -54,8 +54,8 @@
       "attack": 56,
       "defense": 35,
       "type": "Normal",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 6,
@@ -64,8 +64,8 @@
       "attack": 55,
       "defense": 40,
       "type": "Electric",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 7,
@@ -74,8 +74,8 @@
       "attack": 45,
       "defense": 20,
       "type": "Normal",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 8,
@@ -84,8 +84,8 @@
       "attack": 55,
       "defense": 25,
       "type": "Ground",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 9,
@@ -94,8 +94,8 @@
       "attack": 80,
       "defense": 50,
       "type": "Fighting",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 10,
@@ -104,8 +104,8 @@
       "attack": 40,
       "defense": 35,
       "type": "Water",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 11,
@@ -114,8 +114,8 @@
       "attack": 80,
       "defense": 100,
       "type": "Rock",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 12,
@@ -124,8 +124,8 @@
       "attack": 65,
       "defense": 65,
       "type": "Water",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 13,
@@ -134,8 +134,8 @@
       "attack": 35,
       "defense": 70,
       "type": "Electric",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 58
     },
     {
       "id": 14,
@@ -144,8 +144,8 @@
       "attack": 120,
       "defense": 53,
       "type": "Fighting",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 15,
@@ -154,8 +154,8 @@
       "attack": 5,
       "defense": 5,
       "type": "Normal",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     },
     {
       "id": 16,
@@ -164,8 +164,8 @@
       "attack": 45,
       "defense": 65,
       "type": "Psychic",
-      "userId": null,
-      "level": null
+      "userId": "1",
+      "level": 30
     }
   ]
 }

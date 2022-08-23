@@ -18,15 +18,21 @@ const Catch = () => {
     const update = await updateData(`/pokemon/${res.id}`, {...res, userId: token, level: level})
     if (update) {
       console.log('added')
+      return true;
     }
   }
 
-  const handleComplete = (success, number) => {
+  const handleComplete = async (success, number) => {
     if (success) {
-      addPokemon();
+      const res = await addPokemon();
+      if (res) {
+        localStorage.removeItem('capture');
+        setCapture();
+      }
+    } else {
+      localStorage.removeItem('capture');
+      setCapture();
     }
-    localStorage.removeItem('capture');
-    setCapture();
     setComponent(<CompletedContent success={success} setComponent={setComponent} handleClick={handleClick} number={number} />)
   }
 

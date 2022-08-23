@@ -8,21 +8,31 @@ const StartContent = ({ handleClick }) => {
       <Typography variant="h6">
         Catch A Pokemon
       </Typography>
-      <Box>
-        <Typography variant="body2" sx={{ textTransform: 'uppercase', mb: '20px' }}>
-          Available for capture
-        </Typography>
-        <Typography variant="h4">
-          {capture.name}
-        </Typography>
-      </Box>
-      <Button 
-        variant="outlined" 
-        sx={{ px: 10, py: 2, mt: 5, color: 'white' }}
-        onClick={handleClick}
-      >
-        Start
-      </Button>
+        { !capture ?
+          <Typography variant="body2" sx={{ textTransform: 'uppercase', mb: '20px' }}>
+            No item available for capture
+          </Typography>
+          :
+          <Box>
+            <Typography variant="body2" sx={{ textTransform: 'uppercase', mb: '20px' }}>
+              Available for capture
+            </Typography>
+            <Typography variant="h4">
+              {capture.name}
+            </Typography>
+          </Box>}
+      
+      { capture ?
+          <Button 
+            variant="outlined" 
+            sx={{ px: 10, py: 2, mt: 5, color: 'white' }}
+            onClick={handleClick}
+          >
+            Start
+          </Button>
+          :
+          <Box></Box>
+      }
     </Stack>
   );
 }
